@@ -92,6 +92,13 @@
 		"body": [
 			"@extends('${1:templateName}')"
 		]
+	},
+	"asset":{
+		"scope": "php,html",
+		"prefix": "asset",
+		"body": [
+			"{{ asset('${1:resource}') }}"
+		]
 	}
 
 }
