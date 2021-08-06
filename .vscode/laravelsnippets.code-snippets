@@ -1,0 +1,97 @@
+{
+	// Place your global snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+	// Placeholders with the same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"scope": "javascript,typescript",
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+
+	"bladeecho":{
+		"scope": "php, html",
+		"prefix": "bladeecho",
+		"body": [
+			"{{ $1 }}"
+		]
+	},
+	"inlineif":{
+		"scope": "php,html",
+		"prefix": "inlineif",
+		"body": [
+			"{{ ( ${1:condition} ) ? ${2:ifTrue} : ${3:ifFalse} }}"
+		]
+	},
+	"bladeif":{
+		"scope": "php,html",
+		"prefix": "bladeif",
+		"body": [
+			"@if(${1:condition})",
+			"    $2",
+			"@endif"
+		]
+	},
+	"bladeifelse":{
+		"scope": "php,html",
+		"prefix": "bladeifelse",
+		"body": [
+			"@if(${1:condition})",
+			"    $2",
+			"@else",
+			"    $3",
+			"@endif"
+		]
+	},
+	"bladeforeach":{
+		"scope": "php,html",
+		"prefix": "bladeforeach",
+		"body": [
+			"@foreach(${1:items} as ${2:key} => ${3:value})",
+			"    $2",
+			"@endforeach"
+		]
+	},
+	"bladeisset":{
+		"scope": "php,html",
+		"prefix": "bladeisset",
+		"body": [
+			"@isset($${1:varName})",
+			"    $2",
+			"@endisset"
+		]
+	},
+	"bladeempty":{
+		"scope": "php,html",
+		"prefix": "bladeempty",
+		"body": [
+			"@empty($${1:varName})",
+			"    $2",
+			"@endempty"
+		]
+	},
+	"bladesection":{
+		"scope": "php,html",
+		"prefix": "section",
+		"body": [
+			"@section('${1:sectionName}')",
+			"    $2",
+			"@endsection"
+		]
+	},
+	"bladeextends":{
+		"scope": "php,html",
+		"prefix": "extends",
+		"body": [
+			"@extends('${1:templateName}')"
+		]
+	}
+
+}
