@@ -15,7 +15,7 @@
 	// 	],
 	// 	"description": "Log output to console"
 	// }
-	"echo in html code":{
+	"echo in html":{
 		"scope": "php, html",
 		"prefix": "phpecho",
 		"body": [
@@ -23,4 +23,56 @@
 		],
 		"description": "print echo with php tags"
 	},
+	"php var_dump":{
+		"scope": "php, html",
+		"prefix": "phpvar",
+		"body": [
+			"<?php var_dump( $1 ); ?>"
+		]
+	},
+	"inverse php tags":{
+		"scope": "php,html",
+		"prefix": "phpinv",
+		"body": [
+			"?>",
+			"    $1",
+			"<?php"
+		]
+	},
+	"php if":{
+		"scope": "php,html",
+		"prefix": "phpif",
+		"body": [
+			"<?php if(${1:condition}){ ?>",
+			"    $2",
+			"<?php } ?>"
+		]
+	},
+	"php ifelse":{
+		"scope": "php,html",
+		"prefix": "phpifelse",
+		"body": [
+			"<?php if(${1:condition}){ ?>",
+			"    $2",
+			"<?php }else{ ?>",
+			"    $3",
+			"<?php } ?>"
+		]
+	},
+	"php foreach":{
+		"scope": "php,html",
+		"prefix": "phpforeach",
+		"body": [
+			"<?php foreach( $${1:items} as $${2:key} => $${3:value} ){ ?>",
+			"    $4",
+			"<?php } ?>"
+		]
+	},
+	"php tags":{
+		"scope": "php,html",
+		"prefix": "phptags",
+		"body": [
+			"<?php $1 ?>"
+		]
+	}
 }
