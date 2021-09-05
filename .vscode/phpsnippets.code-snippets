@@ -74,5 +74,26 @@
 		"body": [
 			"<?php $1 ?>"
 		]
+	},
+	"this tag":{
+		"scope": "php,html",
+		"prefix": "th",
+		"body": [
+			"$this->${1:obj}"
+		]
+	},
+	"obj property":{
+		"scope": "php,html",
+		"prefix": "obj",
+		"body": [
+			"$${1:obj}->${2:prop}"
+		]
+	},
+	"stat":{
+		"scope": "php,html",
+		"prefix": "stat",
+		"body": [
+			"${1:className}::${2:prop}"
+		]
 	}
 }
