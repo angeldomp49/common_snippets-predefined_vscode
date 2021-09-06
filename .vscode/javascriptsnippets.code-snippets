@@ -101,5 +101,14 @@
 			"    });",
 			"}"
 		]	
+	},
+	"jquery ":{
+		"scope": "javascript",
+		"prefix": "jQ",
+		"body": [
+			"jQuery(function($){",
+			"    $0",
+			"});"
+		]
 	}
 }

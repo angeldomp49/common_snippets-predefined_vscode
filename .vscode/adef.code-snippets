@@ -1,0 +1,9 @@
+{
+    "view":{
+        "scope": "php,html",
+        "prefix": "view",
+        "body": [
+            "view('${CLIPBOARD}');"
+        ]
+    }
+}
