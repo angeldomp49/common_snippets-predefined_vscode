@@ -20,7 +20,7 @@
 		"scope": "php, html",
 		"prefix": "bladeecho",
 		"body": [
-			"{{ $1 }}"
+			"{{ $0 }}"
 		]
 	},
 	"inlineif":{
@@ -35,7 +35,7 @@
 		"prefix": "bladeif",
 		"body": [
 			"@if(${1:condition})",
-			"    $2",
+			"    $0",
 			"@endif"
 		]
 	},
@@ -54,8 +54,8 @@
 		"scope": "php,html",
 		"prefix": "bladeforeach",
 		"body": [
-			"@foreach(${1:items} as ${2:key} => ${3:value})",
-			"    $2",
+			"@foreach($${1:items} as $${2:key} => ${3:value})",
+			"    $0",
 			"@endforeach"
 		]
 	},
@@ -93,12 +93,75 @@
 			"@extends('${1:templateName}')"
 		]
 	},
-	"asset":{
+	"bladeasset":{
 		"scope": "php,html",
 		"prefix": "asset",
 		"body": [
-			"{{ asset('${1:resource}') }}"
+			"{{ asset('${CLIPBOARD}') }}"
+		]
+	},
+	"route":{
+		"scope": "php, html",
+		"prefix": "route",
+		"body": [
+			"{{ route('$0') }}"
+		]
+	},
+	"table migration":{
+		"scope": "php",
+		"prefix": "tab",	
+		"body": "\\$table->$0"
+	},
+	"table string":{
+		"scope": "php",
+		"prefix": "tabstring",	
+		"body": "\\$table->string('${1:column}',255);$0"
+	},
+	"table float":{
+		"scope": "php",
+		"prefix": "tabfl",	
+		"body": "\\$table->float('${1:column}',10,2);$0"
+	},
+	"table foreignId":{
+		"scope": "php",
+		"prefix": "tabfore",
+		"body": "\\$table->foreignId('${1:column}')->constrained('$2')->onDelete('${3:cascade}')->onUpdate('${4:cascade}');$0"
+	},
+	"model namespace":{
+		"scope": "php",
+		"prefix": "usemod",
+		"body": [
+			"use App\\Models\\\\${1:model};$0"
+		]
+	},
+	"facade namespace":{
+		"scope": "php",
+		"prefix": "usefac",
+		"body": [
+			"use Illuminate\\Support\\Facades\\\\${1:facade};$0"
+		]
+	},
+	"controller namespace":{
+		"scope": "php",
+		"prefix": "usecon",
+		"body": [
+			"use App\\Http\\Controllers\\\\${1:controller};$0"
+		]
+	},
+	"seeder insert":{
+		"scope": "php",
+		"prefix": "in",
+		"body": [
+			"DB::table('${1:name}')->insert([",
+			"    $0",
+			"]);"
+		]
+	},
+	"numerico":{
+		"scope": "php,html",
+		"prefix": "num",
+		"body":[
+			"<x-numerico className='d-inline'> ${CLIPBOARD} </x-numerico>"
 		]
 	}
-
 }

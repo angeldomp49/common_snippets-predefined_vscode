@@ -79,7 +79,7 @@
 		"scope": "php,html",
 		"prefix": "th",
 		"body": [
-			"$this->${1:obj}"
+			"\\$this->${0:obj}"
 		]
 	},
 	"obj property":{
@@ -93,7 +93,46 @@
 		"scope": "php,html",
 		"prefix": "stat",
 		"body": [
-			"${1:className}::${2:prop}"
+			"${1:className}::${0:prop}"
+		]
+	},
+	"public static function":{
+		"scope": "php",
+		"prefix": "pubstatfunc",
+		"body": [
+			"public static function ${1:name}($${2:params}){",
+			"    $0",
+			"}"
+		]
+	},
+	"public function":{
+		"scope": "php",
+		"prefix": "pubfunc",
+		"body": [
+			"public function ${1:name}($${2:params}){",
+			"    $0",
+			"}"
+		]
+	},
+	"return":{
+		"scope": "php,html",
+		"prefix": "re",
+		"body": [
+			"return $1;$0"
+		]
+	},
+	"array key value":{
+		"scope": "php,html",
+		"prefix": "key",
+		"body": [
+			"'${1:key}' => ${2:value},$0"
+		]
+	},
+	"array object":{
+		"scope": "php,html",
+		"prefix": "arr",
+		"body": [
+			"$${1:array}['${2:prop}']$0"
 		]
 	}
 }
